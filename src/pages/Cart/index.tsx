@@ -38,12 +38,12 @@ interface Product {
 const Cart: React.FC = () => {
   const { increment, decrement, products } = useCart();
 
-  function handleIncrement(id: string): void {
-    increment(id);
+  async function handleIncrement(id: string): Promise<void> {
+    await increment(id);
   }
 
-  function handleDecrement(id: string): void {
-    decrement(id);
+  async function handleDecrement(id: string): Promise<void> {
+    await decrement(id);
   }
 
   const cartTotal = useMemo(() => {
